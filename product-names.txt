@@ -1,0 +1,335 @@
+ALL PRODUCTS (315 total)
+
+FRUITS (30)
+1. Red Apples
+2. Green Apples
+3. Gala Apples
+4. Honeycrisp Apples
+5. Fuji Apples
+6. Bananas
+7. Plantains
+8. Avocados
+9. Lemons
+10. Limes
+11. Oranges
+12. Blood Oranges
+13. Grapefruit
+14. Clementines
+15. Mandarins
+16. Tangerines
+17. Strawberries
+18. Blueberries
+19. Raspberries
+20. Blackberries
+21. Cranberries
+22. Grapes Red
+23. Grapes Green
+24. Grapes Black
+25. Watermelon
+26. Cantaloupe
+27. Honeydew
+28. Pineapple
+29. Mango
+30. Papaya
+
+VEGETABLES (20)
+1. Spinach
+2. Kale
+3. Romaine Lettuce
+4. Iceberg Lettuce
+5. Arugula
+6. Mixed Greens
+7. Broccoli
+8. Cauliflower
+9. Carrots
+10. Celery
+11. Cucumbers
+12. Zucchini
+13. Yellow Squash
+14. Bell Peppers Red
+15. Bell Peppers Green
+16. Bell Peppers Yellow
+17. Jalapeños
+18. Serrano Peppers
+19. Tomatoes
+20. Cherry Tomatoes
+
+DAIRY (50)
+1. Whole Milk
+2. 2% Milk
+3. 1% Milk
+4. Skim Milk
+5. Lactose-Free Milk
+6. Organic Milk
+7. Chocolate Milk
+8. Buttermilk
+9. Heavy Cream
+10. Half and Half
+11. Whipping Cream
+12. Sour Cream
+13. Cottage Cheese
+14. Cream Cheese
+15. Ricotta Cheese
+16. Mascarpone
+17. Cheddar Cheese Block
+18. Sharp Cheddar
+19. Mild Cheddar
+20. Mozzarella Cheese
+21. Fresh Mozzarella
+22. Parmesan Cheese
+23. Pecorino Romano
+24. Swiss Cheese
+25. Provolone
+26. Gouda Cheese
+27. Brie Cheese
+28. Camembert
+29. Blue Cheese
+30. Feta Cheese
+31. Goat Cheese
+32. Monterey Jack
+33. Colby Jack
+34. Pepper Jack
+35. Havarti
+36. Muenster
+37. Fontina
+38. American Cheese Slices
+39. String Cheese
+40. Shredded Mexican Blend
+41. Shredded Italian Blend
+42. Greek Yogurt Plain
+43. Greek Yogurt Vanilla
+44. Greek Yogurt Strawberry
+45. Regular Yogurt
+46. Icelandic Yogurt
+47. Kefir Plain
+48. Kefir Berry
+49. Probiotic Drink
+50. Smoothie Yogurt
+
+EGGS (5)
+1. Large Eggs
+2. Organic Eggs
+3. Free-Range Eggs
+4. Brown Eggs
+5. Egg Whites Carton
+
+MEAT (50)
+1. Chicken Breast Boneless
+2. Chicken Thighs
+3. Chicken Drumsticks
+4. Chicken Wings
+5. Whole Chicken
+6. Chicken Tenderloins
+7. Ground Chicken
+8. Chicken Cutlets
+9. Turkey Breast
+10. Ground Turkey
+11. Turkey Cutlets
+12. Whole Turkey
+13. Beef Ribeye Steak
+14. Beef Sirloin Steak
+15. Beef T-Bone Steak
+16. Beef Filet Mignon
+17. Beef Strip Steak
+18. Beef Flank Steak
+19. Beef Skirt Steak
+20. Beef Chuck Roast
+21. Beef Brisket
+22. Beef Short Ribs
+23. Ground Beef 80/20
+24. Ground Beef 90/10
+25. Ground Beef 93/7
+26. Beef Stew Meat
+27. Beef Cube Steak
+28. Beef Liver
+29. Pork Chops Bone-In
+30. Pork Chops Boneless
+31. Pork Tenderloin
+32. Pork Shoulder
+33. Pork Ribs Baby Back
+34. Pork Ribs Spare
+35. Pork Belly
+36. Ground Pork
+37. Pork Sausage Links
+38. Italian Sausage
+39. Bratwurst
+40. Kielbasa
+41. Chorizo
+42. Bacon Thick Cut
+43. Bacon Regular Cut
+44. Turkey Bacon
+45. Canadian Bacon
+46. Ham Slices
+47. Honey Ham
+48. Black Forest Ham
+49. Prosciutto
+50. Salami
+
+SEAFOOD (10)
+1. Atlantic Salmon Fillet
+2. Wild Caught Salmon
+3. Sockeye Salmon
+4. Smoked Salmon
+5. Cod Fillet
+6. Tilapia Fillet
+7. Halibut Fillet
+8. Mahi Mahi
+9. Sea Bass
+10. Swordfish Steak
+
+BAKERY (50)
+1. Sourdough Bread
+2. Whole Wheat Bread
+3. White Bread
+4. Multigrain Bread
+5. Rye Bread
+6. Pumpernickel Bread
+7. Ciabatta Loaf
+8. French Baguette
+9. Italian Bread
+10. Focaccia
+11. Naan Bread
+12. Pita Bread
+13. Tortillas Flour
+14. Tortillas Corn
+15. Croissants
+16. Chocolate Croissants
+17. Almond Croissants
+18. Danish Pastry
+19. Blueberry Danish
+20. Cheese Danish
+21. Apple Danish
+22. Muffins Blueberry
+23. Muffins Chocolate Chip
+24. Muffins Banana Nut
+25. Muffins Bran
+26. Muffins Lemon Poppy
+27. Donuts Glazed
+28. Donuts Chocolate
+29. Donuts Jelly Filled
+30. Donuts Old Fashioned
+31. Donut Holes
+32. Bagels Plain
+33. Bagels Everything
+34. Bagels Cinnamon Raisin
+35. Bagels Sesame
+36. Bagels Blueberry
+37. English Muffins
+38. Cinnamon Rolls
+39. Sticky Buns
+40. Dinner Rolls
+41. Hawaiian Rolls
+42. Pretzel Rolls
+43. Brioche Buns
+44. Hamburger Buns
+45. Hot Dog Buns
+46. Sub Rolls
+47. Hoagie Rolls
+48. Garlic Bread
+49. Cheese Bread
+50. Banana Bread
+
+BEVERAGES (50)
+1. Orange Juice
+2. Apple Juice
+3. Grape Juice
+4. Cranberry Juice
+5. Pineapple Juice
+6. Grapefruit Juice
+7. Tomato Juice
+8. V8 Vegetable Juice
+9. Lemonade
+10. Pink Lemonade
+11. Limeade
+12. Fruit Punch
+13. Mango Nectar
+14. Peach Nectar
+15. Tropical Blend Juice
+16. Cold Brew Coffee
+17. Iced Coffee
+18. Bottled Latte
+19. Espresso Drink
+20. Cappuccino Drink
+21. Bottled Mocha
+22. Energy Drink Original
+23. Energy Drink Sugar Free
+24. Energy Drink Tropical
+25. Sports Drink Blue
+26. Sports Drink Red
+27. Sports Drink Lemon-Lime
+28. Sports Drink Orange
+29. Electrolyte Water
+30. Coconut Water
+31. Aloe Vera Drink
+32. Kombucha Ginger
+33. Kombucha Berry
+34. Kombucha Original
+35. Probiotic Drink
+36. Smoothie Strawberry
+37. Smoothie Mango
+38. Smoothie Green
+39. Protein Shake Chocolate
+40. Protein Shake Vanilla
+41. Cola Regular
+42. Cola Zero
+43. Diet Cola
+44. Root Beer
+45. Ginger Ale
+46. Cream Soda
+47. Orange Soda
+48. Grape Soda
+49. Cherry Soda
+50. Lemon-Lime Soda
+
+SNACKS (50)
+1. Potato Chips Classic
+2. Potato Chips BBQ
+3. Potato Chips Sour Cream
+4. Potato Chips Salt & Vinegar
+5. Potato Chips Jalapeño
+6. Kettle Chips Sea Salt
+7. Kettle Chips Pepper
+8. Tortilla Chips
+9. Nacho Cheese Chips
+10. Pita Chips
+11. Veggie Chips
+12. Plantain Chips
+13. Banana Chips
+14. Pretzels Classic
+15. Pretzels Honey Mustard
+16. Pretzels Yogurt Covered
+17. Pretzel Rods
+18. Popcorn Butter
+19. Popcorn Kettle Corn
+20. Popcorn Cheddar
+21. Microwave Popcorn
+22. Cheese Puffs
+23. Corn Puffs
+24. Veggie Straws
+25. Rice Cakes Plain
+26. Rice Cakes Caramel
+27. Trail Mix Classic
+28. Trail Mix Tropical
+29. Trail Mix Nut Free
+30. Mixed Nuts
+31. Cashews Roasted
+32. Almonds Roasted
+33. Peanuts Salted
+34. Pistachios Shelled
+35. Walnuts
+36. Pecans
+37. Macadamia Nuts
+38. Sunflower Seeds
+39. Pumpkin Seeds
+40. Granola Bars Oats
+41. Granola Bars Chocolate
+42. Granola Bars Peanut Butter
+43. Protein Bars Chocolate
+44. Protein Bars Peanut
+45. Energy Bars Fruit
+46. Cereal Bars
+47. Cookies Chocolate Chip
+48. Cookies Oatmeal
+49. Cookies Sandwich Creme
+50. Cookies Wafer
+

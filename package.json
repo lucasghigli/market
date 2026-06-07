@@ -1,0 +1,25 @@
+{
+  "name": "supermarket-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://lucasghigli.github.io/marketWebsite",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "node -e \"import('fs').then(fs => fs.copyFileSync('dist/index.html', 'dist/404.html'))\"",
+    "preview": "vite preview --port 4173",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -r https://github.com/lucasghigli/marketWebsite.git"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.3.0",
+    "vite": "^6.0.3"
+  }
+}
