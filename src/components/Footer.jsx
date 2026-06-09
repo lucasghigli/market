@@ -106,7 +106,9 @@ export default function Footer() {
 
         <div className="container">
 
-          <p>© 2024 FreshMart. All rights reserved.</p>
+          <p className="footer-copyright">
+            © 2025 FreshMart. All rights reserved by Lucas Ghigli.
+          </p>
 
         </div>
 

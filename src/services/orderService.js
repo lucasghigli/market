@@ -11,7 +11,17 @@ function saveOrders(orders) {
 }
 
 export const orderService = {
-  createOrder(userId, items, { shippingAddress, paymentMethod, fulfillmentType, subtotal, tax, deliveryFee, total }) {
+  createOrder(userId, items, {
+    shippingAddress,
+    paymentMethod,
+    fulfillmentType,
+    subtotal,
+    tax,
+    deliveryFee,
+    discount = 0,
+    promoCode = null,
+    total,
+  }) {
     const orders = getOrders();
     const order = {
       id: `ORD-${Date.now()}`,
@@ -29,6 +39,8 @@ export const orderService = {
       subtotal,
       tax,
       deliveryFee,
+      discount,
+      promoCode,
       total,
       status: 'pending',
       createdAt: new Date().toISOString(),

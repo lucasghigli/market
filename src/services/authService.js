@@ -1,32 +1,21 @@
 const USERS_KEY = 'supermarket_users';
 const SESSION_KEY = 'supermarket_session';
-
-const defaultUsers = [
-  {
-    id: 'admin-1',
-    name: 'Admin User',
-    email: 'admin@freshmart.com',
-    phone: '',
-    password: 'admin123',
-    role: 'admin',
-    createdAt: '2024-01-01T00:00:00.000Z',
-  },
-  {
-    id: 'user-1',
-    name: 'John Doe',
-    email: 'john@example.com',
-    phone: '',
-    password: 'user123',
-    role: 'user',
-    createdAt: '2024-02-15T00:00:00.000Z',
-  },
-];
+const USERS_RESET_VERSION = 'cleared-v1';
 
 function getUsers() {
+  const resetVersion = localStorage.getItem('supermarket_users_reset');
+  if (resetVersion !== USERS_RESET_VERSION) {
+    localStorage.removeItem(USERS_KEY);
+    localStorage.removeItem(SESSION_KEY);
+    localStorage.setItem('supermarket_users_reset', USERS_RESET_VERSION);
+    localStorage.setItem(USERS_KEY, JSON.stringify([]));
+    return [];
+  }
+
   const stored = localStorage.getItem(USERS_KEY);
   if (!stored) {
-    localStorage.setItem(USERS_KEY, JSON.stringify(defaultUsers));
-    return [...defaultUsers];
+    localStorage.setItem(USERS_KEY, JSON.stringify([]));
+    return [];
   }
   return JSON.parse(stored);
 }

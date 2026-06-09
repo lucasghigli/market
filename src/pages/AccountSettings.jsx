@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ConfirmDialog from '../components/ConfirmDialog';
 import { useAuth } from '../context/AuthContext';
 import { authService } from '../services/authService';
 
@@ -16,6 +17,7 @@ export default function AccountSettings() {
   const [saving, setSaving] = useState(false);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -44,15 +46,16 @@ export default function AccountSettings() {
   };
 
   const handleDeleteAccount = () => {
-    const confirmed = window.confirm(
-      'Are you sure you want to permanently delete your account? This cannot be undone.'
-    );
-    if (!confirmed) return;
+    setShowDeleteConfirm(true);
+  };
 
-    const doubleCheck = window.prompt('Type DELETE to confirm account deletion:');
-    if (doubleCheck !== 'DELETE') return;
+  const handleCancelDelete = () => {
+    setShowDeleteConfirm(false);
+  };
 
+  const handleConfirmDelete = () => {
     deleteAccount();
+    setShowDeleteConfirm(false);
     navigate('/');
   };
 
@@ -148,16 +151,34 @@ export default function AccountSettings() {
               <p className="account-card-desc">
                 Sign out anytime. Your information stays saved until you delete your account.
               </p>
-              <button className="btn btn--outline btn--full" onClick={handleLogout}>
+              <button type="button" className="btn btn--outline btn--full" onClick={handleLogout}>
                 Log Out
               </button>
-              <button className="btn btn--danger btn--full" onClick={handleDeleteAccount}>
+            </div>
+
+            <div className="account-card account-card--danger">
+              <h2>Delete Account</h2>
+              <p className="account-card-desc">
+                Permanently remove your account and profile. This action cannot be undone.
+              </p>
+              <button type="button" className="btn btn--danger btn--full" onClick={handleDeleteAccount}>
                 Delete Account
               </button>
             </div>
           </aside>
         </div>
       </div>
+
+      {showDeleteConfirm && (
+        <ConfirmDialog
+          title="Delete your account?"
+          message="This will permanently delete your account and sign you out. You will not be able to recover your profile or order history."
+          confirmLabel="Yes"
+          cancelLabel="No"
+          onConfirm={handleConfirmDelete}
+          onCancel={handleCancelDelete}
+        />
+      )}
     </div>
   );
 }

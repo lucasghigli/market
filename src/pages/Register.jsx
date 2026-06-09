@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { usePromo } from '../context/PromoContext';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -9,6 +10,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const { register } = useAuth();
+  const { appliedPromo, appliedPromoDetails } = usePromo();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -37,6 +39,12 @@ export default function Register() {
       <div className="auth-card">
         <h1 className="auth-title">Create Account</h1>
         <p className="auth-subtitle">Join FreshMart and start shopping</p>
+
+        {appliedPromo && appliedPromoDetails && (
+          <div className="alert alert--success auth-promo-banner">
+            Your <strong>{appliedPromo.code}</strong> code is ready — {appliedPromoDetails.description} on your first order.
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">

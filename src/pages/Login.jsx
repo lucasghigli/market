@@ -58,14 +58,8 @@ export default function Login() {
         </form>
 
         <p className="auth-footer">
-          Don't have an account? <Link to="/register">Register</Link>
+          Don&apos;t have an account? <Link to="/register">Register</Link>
         </p>
-
-        <div className="demo-credentials">
-          <p><strong>Demo accounts:</strong></p>
-          <p>Admin: admin@freshmart.com / admin123</p>
-          <p>User: john@example.com / user123</p>
-        </div>
       </div>
     </div>
   );

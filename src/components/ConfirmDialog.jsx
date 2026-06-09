@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
+
 export default function ConfirmDialog({
-  open,
   title,
   message,
   confirmLabel = 'Yes',
@@ -8,10 +9,26 @@ export default function ConfirmDialog({
   onCancel,
   variant = 'danger',
 }) {
-  if (!open) return null;
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') onCancel();
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onCancel]);
 
   return (
-    <div className="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirm-dialog-title">
+    <div
+      className="confirm-dialog"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="confirm-dialog-title"
+      aria-describedby="confirm-dialog-message"
+    >
       <button
         type="button"
         className="confirm-dialog-backdrop"
@@ -20,12 +37,20 @@ export default function ConfirmDialog({
       />
       <div className="confirm-dialog-panel">
         <h2 id="confirm-dialog-title" className="confirm-dialog-title">{title}</h2>
-        <p className="confirm-dialog-message">{message}</p>
+        <p id="confirm-dialog-message" className="confirm-dialog-message">{message}</p>
         <div className="confirm-dialog-actions">
-          <button type="button" className="btn btn--outline" onClick={onCancel}>
+          <button
+            type="button"
+            className="btn btn--outline confirm-dialog-btn"
+            onClick={onCancel}
+          >
             {cancelLabel}
           </button>
-          <button type="button" className={`btn btn--${variant}`} onClick={onConfirm}>
+          <button
+            type="button"
+            className={`btn confirm-dialog-btn ${variant === 'danger' ? 'btn--danger' : 'btn--primary'}`}
+            onClick={onConfirm}
+          >
             {confirmLabel}
           </button>
         </div>

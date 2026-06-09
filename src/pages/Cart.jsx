@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
+import PromoCodeForm from '../components/PromoCodeForm';
 import { useCart } from '../context/CartContext';
+import { usePromo } from '../context/PromoContext';
 import { DELIVERY_FEE, FREE_DELIVERY_THRESHOLD } from '../config/store';
 import { formatPrice } from '../utils/currency';
 
 export default function Cart() {
-  const { items, subtotal, tax, total, clearCart } = useCart();
+  const { items, subtotal, clearCart } = useCart();
+  const { getTotals } = usePromo();
+  const { discount, tax, total } = getTotals(subtotal, 'delivery');
   const amountToFreeDelivery = FREE_DELIVERY_THRESHOLD - subtotal;
 
   if (items.length === 0) {
@@ -47,10 +51,17 @@ export default function Cart() {
 
           <div className="cart-summary">
             <h3>Order Summary</h3>
+            <PromoCodeForm idPrefix="cart-promo" />
             <div className="summary-row">
               <span>Subtotal</span>
               <span>{formatPrice(subtotal)}</span>
             </div>
+            {discount > 0 && (
+              <div className="summary-row summary-row--discount">
+                <span>Promo discount</span>
+                <span>−{formatPrice(discount)}</span>
+              </div>
+            )}
             <div className="summary-row">
               <span>Tax (8%)</span>
               <span>{formatPrice(tax)}</span>

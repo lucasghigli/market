@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { PromoProvider } from './context/PromoContext';
 import { ReviewsModalProvider } from './context/ReviewsModalContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -35,6 +36,7 @@ export default function App() {
       <ScrollToTop />
       <AuthProvider>
         <CartProvider>
+          <PromoProvider>
           <ReviewsModalProvider>
           <div className="app">
             <Header />
@@ -83,6 +85,7 @@ export default function App() {
             <Footer />
           </div>
           </ReviewsModalProvider>
+          </PromoProvider>
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>

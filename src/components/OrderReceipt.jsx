@@ -116,6 +116,12 @@ export default function OrderReceipt({ order, type = 'confirmation' }) {
               <span>{order.deliveryFee === 0 ? 'Free' : formatPrice(order.deliveryFee)}</span>
             </div>
           )}
+          {order.discount > 0 && (
+            <div>
+              <span>Promo{order.promoCode ? ` (${order.promoCode})` : ''}</span>
+              <span>−{formatPrice(order.discount)}</span>
+            </div>
+          )}
           {order.tax != null && (
             <div><span>Tax</span><span>{formatPrice(order.tax)}</span></div>
           )}

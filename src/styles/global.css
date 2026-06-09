@@ -779,87 +779,61 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-heading); letter-spacing: 0.05em;
 }
 .promo-btn { flex-shrink: 0; }
-<<<<<<< HEAD
-=======
-.promo-banner-form {
-  display: flex; flex-direction: column; gap: 0.85rem;
-  min-width: min(100%, 320px); flex-shrink: 0; width: 100%;
-  max-width: 360px;
+.promo-actions { display: flex; flex-direction: column; align-items: center; gap: 0.65rem; flex-shrink: 0; }
+.promo-actions-note { font-size: 0.82rem; opacity: 0.75; text-align: center; max-width: 220px; line-height: 1.45; }
+.promo-form-wrap { margin-top: 1rem; width: 100%; max-width: 420px; }
+.promo-form-wrap--banner { max-width: 100%; }
+.promo-form { display: flex; gap: 0.5rem; width: 100%; }
+.promo-form-input {
+  flex: 1; min-width: 0; padding: 0.7rem 1rem; border-radius: var(--radius);
+  border: 1px solid var(--border); background: white; font-size: 0.9rem;
+  font-family: var(--font-heading); letter-spacing: 0.04em; text-transform: uppercase;
 }
-.promo-input-field--banner {
-  width: 100%; background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(255, 255, 255, 0.25); color: var(--text);
+.promo-form--banner .promo-form-input {
+  border-color: rgba(255, 255, 255, 0.25); background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
-.promo-applied-row--banner { width: 100%; }
-
-/* ===== Promo Code Input ===== */
-.promo-input { margin-bottom: 1rem; }
-.promo-input-row {
-  display: flex; gap: 0.5rem; align-items: stretch;
+.promo-form--banner .promo-form-input::placeholder { color: rgba(255, 255, 255, 0.45); text-transform: none; letter-spacing: normal; font-family: var(--font-body); }
+.promo-form--banner .promo-form-input:focus { outline: none; border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.14); }
+.promo-form-btn { flex-shrink: 0; white-space: nowrap; }
+.btn--accent { background: var(--accent); color: #1e293b; border-color: var(--accent); font-weight: 700; }
+.btn--accent:hover { background: #fbbf24; border-color: #fbbf24; color: #1e293b; }
+.promo-feedback { margin: 0.5rem 0 0; font-size: 0.82rem; line-height: 1.4; }
+.promo-feedback--error { color: #fecaca; }
+.promo-feedback--success { color: #bbf7d0; }
+.promo-form-wrap:not(.promo-form-wrap--banner) .promo-feedback--error { color: var(--danger); }
+.promo-form-wrap:not(.promo-form-wrap--banner) .promo-feedback--success { color: var(--success); }
+.promo-applied {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  margin-top: 1rem; padding: 0.85rem 1rem; border-radius: var(--radius);
+  background: #f0fdf4; border: 1px solid #bbf7d0; font-size: 0.88rem;
 }
-.promo-input-field {
-  flex: 1; min-width: 0; padding: 0.6rem 0.85rem;
-  border: 1.5px solid var(--border); border-radius: var(--radius);
-  font-size: 0.9rem; font-family: var(--font-heading);
-  letter-spacing: 0.04em; text-transform: uppercase;
-  background: white; transition: border-color var(--transition);
+.promo-applied--banner {
+  background: rgba(22, 163, 74, 0.15); border-color: rgba(134, 239, 172, 0.35); color: white;
 }
-.promo-input-field:focus {
-  outline: none; border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
-}
-.promo-input--banner .promo-input-field {
-  background: rgba(255, 255, 255, 0.95); border-color: rgba(255, 255, 255, 0.25);
-}
-.promo-input--banner .promo-apply-btn {
-  background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.35);
-  color: white; white-space: nowrap;
-}
-.promo-input--banner .promo-apply-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.2); border-color: white; color: white;
-}
-.promo-applied-row {
-  display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;
-  padding: 0.65rem 0.85rem; background: #f0fdf4;
-  border: 1.5px solid #bbf7d0; border-radius: var(--radius);
-}
-.promo-input--banner .promo-applied-row {
-  background: rgba(22, 163, 74, 0.15); border-color: rgba(22, 163, 74, 0.35);
-}
-.promo-applied-code {
-  font-family: var(--font-heading); font-weight: 700;
-  letter-spacing: 0.05em; color: var(--success);
-}
-.promo-input--banner .promo-applied-code { color: #86efac; }
-.promo-applied-label {
-  font-size: 0.75rem; font-weight: 600; color: var(--success);
-  text-transform: uppercase; letter-spacing: 0.04em;
-}
-.promo-input--banner .promo-applied-label { color: #bbf7d0; }
+.promo-applied-main { display: flex; gap: 0.65rem; align-items: flex-start; }
+.promo-applied-icon { color: var(--success); font-weight: 700; flex-shrink: 0; }
+.promo-applied--banner .promo-applied-icon { color: #86efac; }
+.promo-applied-code { margin: 0; line-height: 1.45; }
+.promo-applied-hint { margin: 0.35rem 0 0; font-size: 0.8rem; opacity: 0.85; }
+.promo-applied-hint a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.promo-applied--banner .promo-applied-hint a { color: #fcd34d; }
 .promo-remove-btn {
-  margin-left: auto; background: none; border: none;
-  font-size: 0.8rem; color: var(--text-muted); cursor: pointer;
-  text-decoration: underline; padding: 0;
+  flex-shrink: 0; background: none; border: none; color: var(--text-muted);
+  font-size: 0.8rem; cursor: pointer; padding: 0.15rem 0; text-decoration: underline;
+  text-underline-offset: 2px;
 }
+.promo-applied--banner .promo-remove-btn { color: rgba(255, 255, 255, 0.7); }
 .promo-remove-btn:hover { color: var(--danger); }
-.promo-input--banner .promo-remove-btn { color: rgba(255, 255, 255, 0.7); }
-.promo-input--banner .promo-remove-btn:hover { color: #fca5a5; }
-.promo-status {
-  margin: 0.5rem 0 0; font-size: 0.82rem; line-height: 1.45;
-}
-.promo-status--success { color: var(--success); }
-.promo-status--error { color: var(--danger); }
-.promo-status--info { color: #2563eb; }
-.promo-input--banner .promo-status--success { color: #86efac; }
-.promo-input--banner .promo-status--error { color: #fca5a5; }
-.promo-input--banner .promo-status--info { color: #93c5fd; }
-.promo-hint {
-  font-size: 0.82rem; color: var(--text-muted); margin: -0.5rem 0 0.75rem;
-  line-height: 1.45;
-}
+.promo-applied--banner .promo-remove-btn:hover { color: #fecaca; }
 .summary-row--discount { color: var(--success); font-weight: 600; }
-.receipt-discount { color: var(--success); font-weight: 600; }
->>>>>>> f90da99 (Updates)
+.cart-summary .promo-form-wrap,
+.checkout-summary .promo-form-wrap { margin: 0 0 1rem; max-width: none; }
+.auth-promo-banner { margin-bottom: 1.25rem; text-align: center; font-size: 0.88rem; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
 
 /* ===== Page Headers ===== */
 .page-header { margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
@@ -1172,11 +1146,6 @@ img { max-width: 100%; display: block; }
 .alert { padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.9rem; margin-bottom: 1rem; }
 .alert--error { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
 .alert--success { background: #f0fdf4; color: var(--success); border: 1px solid #bbf7d0; }
-<<<<<<< HEAD
-=======
-.alert--info { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
-.auth-promo-notice { margin-bottom: 1.25rem; text-align: center; font-size: 0.88rem; }
->>>>>>> f90da99 (Updates)
 
 /* ===== Account Settings ===== */
 .account-layout { display: grid; grid-template-columns: 1fr 320px; gap: 2rem; align-items: start; }
@@ -1195,41 +1164,65 @@ img { max-width: 100%; display: block; }
 .account-role { color: var(--primary); }
 .account-card--actions { display: flex; flex-direction: column; gap: 0.75rem; }
 .account-card--actions .account-card-desc { margin-bottom: 0.5rem; }
+.account-card--danger {
+  border: 1px solid #fecaca;
+  background: linear-gradient(180deg, #fff 0%, #fef2f2 100%);
+}
+.account-card--danger h2 { color: var(--danger); }
 
-<<<<<<< HEAD
-=======
-/* ===== Confirm Dialog ===== */
+/* ===== Confirm dialog ===== */
 .confirm-dialog {
-  position: fixed; inset: 0; z-index: 2000;
+  position: fixed; inset: 0; z-index: 300;
   display: flex; align-items: center; justify-content: center;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 .confirm-dialog-backdrop {
-  position: absolute; inset: 0; background: rgba(15, 23, 42, 0.55);
+  position: absolute; inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
   border: none; cursor: pointer;
 }
 .confirm-dialog-panel {
-  position: relative; width: min(100%, 420px);
-  background: white; border-radius: var(--radius);
-  padding: 1.75rem; box-shadow: var(--shadow-lg);
-  animation: confirm-dialog-in 0.2s ease-out;
+  position: relative; z-index: 1;
+  width: 100%; max-width: 440px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+  animation: confirmDialogIn 0.22s ease;
 }
-@keyframes confirm-dialog-in {
-  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+@keyframes confirmDialogIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 .confirm-dialog-title {
-  font-size: 1.2rem; margin-bottom: 0.65rem; color: var(--text);
+  font-size: 1.25rem; font-weight: 700; margin: 0 0 0.75rem;
+  color: var(--text);
 }
 .confirm-dialog-message {
-  font-size: 0.92rem; color: var(--text-muted); line-height: 1.55;
-  margin-bottom: 1.5rem;
+  font-size: 0.92rem; line-height: 1.6; color: var(--text-muted);
+  margin: 0 0 1.5rem;
 }
 .confirm-dialog-actions {
-  display: flex; gap: 0.75rem; justify-content: flex-end; flex-wrap: wrap;
+  display: flex; gap: 0.75rem; justify-content: flex-end;
+}
+.confirm-dialog-btn { min-width: 96px; }
+
+@media (max-width: 768px) {
+  .confirm-dialog { padding: 1rem; align-items: flex-end; }
+  .confirm-dialog-panel {
+    max-width: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 1.5rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  .confirm-dialog-actions {
+    flex-direction: column-reverse;
+    gap: 0.65rem;
+  }
+  .confirm-dialog-btn { width: 100%; min-width: 0; min-height: 44px; }
 }
 
->>>>>>> f90da99 (Updates)
 /* ===== Dashboard ===== */
 .dashboard-stats, .admin-stats {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -1395,10 +1388,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.82rem; font-weight: 600; color: #cbd5e1;
 }
 .footer-bottom { padding: 1.25rem 0; text-align: center; font-size: 0.8rem; color: #64748b; }
-<<<<<<< HEAD
-=======
 .footer-copyright { margin: 0; letter-spacing: 0.02em; }
->>>>>>> f90da99 (Updates)
 
 /* ===== Responsive ===== */
 
@@ -1469,11 +1459,12 @@ img { max-width: 100%; display: block; }
   .product-card-footer .btn { min-height: 36px; padding: 0.42rem 0.95rem; }
 
   .promo-content { flex-direction: column; text-align: center; }
-<<<<<<< HEAD
-=======
-  .promo-banner-form { max-width: none; }
->>>>>>> f90da99 (Updates)
   .promo-content .btn { width: 100%; }
+  .promo-form { flex-direction: column; }
+  .promo-form-btn { width: 100%; }
+  .promo-applied { flex-direction: column; }
+  .promo-actions { width: 100%; }
+  .promo-actions-note { max-width: none; }
 
   .page-header { flex-direction: column; align-items: stretch; }
   .products-sidebar { padding: 1rem; }

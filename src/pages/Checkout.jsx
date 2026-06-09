@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import PromoCodeForm from '../components/PromoCodeForm';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { usePromo } from '../context/PromoContext';
 import { orderService } from '../services/orderService';
 import { paymentService } from '../services/paymentService';
 import { deliveryService, STORE_LOCATION } from '../services/deliveryService';
@@ -9,8 +11,9 @@ import { DELIVERY_FEE, FREE_DELIVERY_THRESHOLD } from '../config/store';
 import { formatPrice } from '../utils/currency';
 
 export default function Checkout() {
-  const { items, subtotal, tax, clearCart } = useCart();
+  const { items, subtotal, clearCart } = useCart();
   const { user } = useAuth();
+  const { appliedPromo, getTotals, clearPromo } = usePromo();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -26,8 +29,7 @@ export default function Checkout() {
     cvv: '',
   });
 
-  const deliveryFee = deliveryService.calculateDeliveryFee(subtotal, fulfillmentType);
-  const total = deliveryService.getOrderTotal(subtotal, tax, fulfillmentType);
+  const { discount, tax, deliveryFee, total } = getTotals(subtotal, fulfillmentType);
   const deliveryHint = deliveryService.getDeliveryLabel(subtotal, fulfillmentType);
   const isDelivery = fulfillmentType === 'delivery';
 
@@ -41,6 +43,11 @@ export default function Checkout() {
 
     if (isDelivery && (!form.address || !form.city || !form.zip)) {
       setError('Please enter your full delivery address.');
+      return;
+    }
+
+    if (appliedPromo && discount <= 0) {
+      setError('Your promo code is not valid for this order. Please remove it or try another code.');
       return;
     }
 
@@ -67,10 +74,13 @@ export default function Checkout() {
         subtotal,
         tax,
         deliveryFee,
+        discount,
+        promoCode: appliedPromo?.code || null,
         total,
       });
 
       clearCart();
+      clearPromo();
       navigate(`/orders/${order.id}`, { state: { justPlaced: true, showReceipt: true, receiptType: 'confirmation' } });
     } catch (err) {
       setError(err.message);
@@ -213,6 +223,7 @@ export default function Checkout() {
 
           <div className="checkout-summary">
             <h3>Order Summary</h3>
+            <PromoCodeForm idPrefix="checkout-promo" />
             {items.map((item) => (
               <div key={item.product.id} className="checkout-item">
                 <span>{item.product.name} × {item.quantity}</span>
@@ -220,6 +231,12 @@ export default function Checkout() {
               </div>
             ))}
             <div className="summary-row"><span>Subtotal</span><span>{formatPrice(subtotal)}</span></div>
+            {discount > 0 && (
+              <div className="summary-row summary-row--discount">
+                <span>Promo ({appliedPromo?.code})</span>
+                <span>−{formatPrice(discount)}</span>
+              </div>
+            )}
             <div className="summary-row">
               <span>Delivery</span>
               <span>

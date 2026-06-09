@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
+import PromoCodeForm from '../components/PromoCodeForm';
+import { WELCOME_PROMO_CODE } from '../config/promotions';
 import { productService } from '../services/productService';
 import { STORE, STORE_ADDRESS_SINGLE } from '../config/store';
 import { getImageSrc } from '../utils/imagePath';
@@ -266,9 +268,16 @@ export default function Home() {
           <div className="promo-text">
             <span className="promo-eyebrow">New customers</span>
             <h2>Get 20% off your first order</h2>
-            <p>Use code <strong className="promo-code">WELCOME20</strong> at checkout. Limited-time welcome offer.</p>
+            <p>
+              Enter code <strong className="promo-code">{WELCOME_PROMO_CODE}</strong> below
+              and redeem it at checkout. Limited-time welcome offer.
+            </p>
+            <PromoCodeForm variant="banner" idPrefix="home-promo" />
           </div>
-          <Link to="/register" className="btn btn--primary btn--lg promo-btn">Create free account</Link>
+          <div className="promo-actions">
+            <Link to="/register" className="btn btn--primary btn--lg promo-btn">Create free account</Link>
+            <p className="promo-actions-note">New to FreshMart? Register to unlock your welcome discount.</p>
+          </div>
         </div>
       </section>
     </div>
